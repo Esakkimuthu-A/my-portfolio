@@ -7,7 +7,7 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
 import { NavbarComponent } from './auth/components/navbar/navbar.component';
 
 const routes: Routes = [
-  {path:' ',redirectTo:'/app/dashboard',pathMatch:'full'},
+  {path:'',redirectTo:'/app/dashboard',pathMatch:'full'},
   {path:'app',component:NavbarComponent,children:[
     {path:'dashboard',component:DashboardPageComponent},
     {path:'aboutus',component:AboutusPageComponent},
