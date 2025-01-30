@@ -1,0 +1,49 @@
+<!-- <div style="background-image: url('/assets/aboutMe.jpg')" class="main-container"> -->
+  <div fxLayoutAlign="center center" class="container">
+    <div fxFlex="85%">
+      <div fxLayout="row" class="navbar-content">
+        <div class="heading">
+          <h1><span>P</span>ortfolio</h1>
+        </div>
+        <div fxLayout="row" fxHide.xs style="align-items: center;">
+          <div *ngFor="let item of navigationDetails;let i=index;" class="navigate-content" (click)="onNavigate(i)">
+            <a [ngClass]="{'selected-button-color' : i == hoverIndex}" routerLink="{{item?.navigate}}">{{item?.name}}</a>
+          </div>
+          <label for="themeToggle" class="themeToggle st-sunMoonThemeToggleBtn" type="checkbox">
+            <input type="checkbox" id="themeToggle" class="themeToggleInput" [formControl]="theme" (change)="checkTheme()"/>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" stroke="none">
+              <mask id="moon-mask">
+                <rect x="0" y="0" width="20" height="20" fill="white"></rect>
+                <circle cx="11" cy="3" r="8" fill="black"></circle>
+              </mask>
+              <circle class="sunMoon" cx="10" cy="10" r="8" mask="url(#moon-mask)"></circle>
+              <g>
+                <circle class="sunRay sunRay1" cx="18" cy="10" r="1.5"></circle>
+                <circle class="sunRay sunRay2" cx="14" cy="16.928" r="1.5"></circle>
+                <circle class="sunRay sunRay3" cx="6" cy="16.928" r="1.5"></circle>
+                <circle class="sunRay sunRay4" cx="2" cy="10" r="1.5"></circle>
+                <circle class="sunRay sunRay5" cx="6" cy="3.1718" r="1.5"></circle>
+                <circle class="sunRay sunRay6" cx="14" cy="3.1718" r="1.5"></circle>
+              </g>
+            </svg>
+          </label>
+        </div>
+        <div fxHide fxShow.xs>
+          <div class="navbar">
+            <ul id="sideMenu">
+              <li (click)="closeMenu()" routerLink="/app/dashboard">Home</li>
+              <li (click)="closeMenu()" routerLink="/app/aboutus">Aboutus</li>
+              <li (click)="closeMenu()" routerLink="/app/contactus">ContactUs</li>
+              <input type="checkbox" id="switch" [formControl]="theme" (change)="checkTheme()"/>
+              <label for="switch" class="small-screen-toggle">Toggle</label>
+              <mat-icon (click)="closeMenu()" class="menu-close">close</mat-icon>
+            </ul>
+            <mat-icon (click)="openMenu()" class="menu-open">menu</mat-icon>
+            <div (click)="closeMenu()" id="dropMenu" class="menu-drop"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+<!-- </div> -->

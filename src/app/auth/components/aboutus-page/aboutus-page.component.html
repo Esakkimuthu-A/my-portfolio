@@ -1,0 +1,29 @@
+<div fxLayoutAlign="center center" class="container" [ngClass]="{'light-theme':!commonService.isDarkTheme}">
+  <div fxFlex="90%">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="5%" class="aboutus-banner">
+      <div fxFlex="40%" fxLayoutAlign.lt-md="center center" class="aboutus-banner-image">
+        <img src="/assets/aboutMe.jpg">
+      </div>
+      <div fxFlex="60%" fxLayout="column" fxLayoutGap="4%" class="aboutus-banner-content">
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="5%">
+          <div fxFlex="50%" fxLayout="column" class="experience-content"> 
+              <img src="/assets/experience.png">
+              <h2>Experience</h2>
+              <p>2+ years</p>
+              <p>Full Stack Development</p>
+          </div>
+          <div fxFlex="50%" fxLayout="column" class="education-content">
+            <img src="/assets/degree.png">
+            <h2>Education</h2>
+            <p>B.E</p>
+            <p>Computer Science And Engineering</p>
+          </div>
+        </div>
+        <p class="about-me-description">I am a front-end web developer.I can provide clean code and pixel perfect design.I also make the website more & more interactive with web animations.A responsive design makes your website accessible to all users,regardless of their device.</p>
+        <div class="talk-btn">
+          <button class="aboutus-btn" routerLink="/app/contactus">Let's Talk</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

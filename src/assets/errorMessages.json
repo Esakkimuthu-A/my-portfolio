@@ -1,0 +1,5 @@
+{
+  "FIELD_REQUIRED":"This field is required",
+  "CHARACTER_MAX_LENGHT":"Characters maximum lenght 200!",
+  "EMAIL_INVALID":"This email not valid!!!"
+}

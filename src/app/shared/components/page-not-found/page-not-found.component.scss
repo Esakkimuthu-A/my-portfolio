@@ -1,0 +1,25 @@
+.container{
+  height: 100%;
+}
+
+.page-not-found{
+  text-align: center;
+  height: 200px;
+  width: 400px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.page-not-found h1,
+.page-not-found p{
+  font-size: 30px;
+  font-family: var(--text-font-family);
+}
+
+.page-not-found h1{
+  font-weight: 600;
+}
+
+.page-not-found p{
+  font-weight: 500;
+}

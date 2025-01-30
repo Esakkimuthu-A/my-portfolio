@@ -1,0 +1,85 @@
+.light-theme{
+
+  .form-container{
+    background-color: #f1f1f1;
+  }
+
+  .form-btn button{
+    background-color: #fe4600 !important;
+    color: #f1f1f1;
+  }
+
+}
+
+.main-container{
+  background-color: var(--background-color) !important;
+}
+
+.form-banner{
+  height: 200px;
+  background-color: var(--main-color);
+}
+
+.form-container{
+  background-color: var(--text-color);
+  margin-top: 30%;
+  border-radius: 5px;
+  padding: 30px 50px 10px 30px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+} 
+
+.form-heading h1{
+  color: black;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: var(--text-font-family);
+}
+
+.form-field{
+  width: 100%;
+}
+
+.form-btn button{
+  background-color: var(--background-color);
+  color: var(--main-color);
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+}
+
+.custom-input::placeholder {
+  color: rgb(157 157 157) !important;
+  font-size: 16px;
+  font-family: var(--text-font-family);
+}
+
+.text-area-input{
+  height: 80px;
+  padding: 10px;
+  resize: none;
+}
+
+textarea::placeholder {
+  color: rgb(157 157 157) !important;
+  font-size: 16px;
+  font-family: var(--text-font-family);
+}
+
+.social-media-icons img{
+  height: 30px;
+  width: 30px;
+  margin: 0px 10px;
+}
+
+@media screen and (max-width: 959px){
+  .form-container{
+    margin-top: 100%;
+  } 
+}
+
+@media screen and (max-width: 600px) {
+  .form-container{
+    margin-top: 150%;
+    padding: 20px;
+  } 
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpRoutingService } from './shared/services/http-routing.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-portfolio';
+  constructor(private HttpService : HttpRoutingService ){
+  }
+
+  ngOnInit(): void{
+    this.HttpService.getErrorMessages();
+  }
 }

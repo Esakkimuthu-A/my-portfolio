@@ -1,0 +1,72 @@
+<div fxLayoutAlign="center center" [ngClass]="{'light-theme':!commonService.isDarkTheme}">
+  <div fxFlex="100%">
+    <div fxLayoutAlign="center center" class="form-banner">
+      <div class="form-container" fxFlex="50%" fxFlex.lt-md="80%" fxFlex.xs="90%" fxLayout="column" fxLayoutGap="5%">
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="0%">
+          <div class="form-heading">
+            <h1>Get in Touch</h1>
+          </div>
+          <div class="form-field">
+            <form fxFlex="100%" [formGroup]="registerForm" fxLayout="column" *ngIf="registerForm">
+              <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3%">
+                <div fxLayout="column" fxFlex="50%">
+                  <mat-form-field fxFlex="80%" appearance="outline">
+                    <div fxLayout="row">
+                      <input matInput placeholder="Please enter your first name.." class="custom-input" formControlName="firstName">
+                    </div>
+                    <mat-error *ngIf="registerForm?.get('firstName')?.hasError('required')">{{errorMessage?.FIELD_REQUIRED}}</mat-error>
+                  </mat-form-field>
+                </div>
+                <div fxLayout="column" fxFlex="50%">
+                  <mat-form-field fxFlex="80%" appearance="outline">
+                    <div fxLayout="row">
+                      <input matInput placeholder="Please enter your last name.." class="custom-input" formControlName="lastName">
+                    </div>
+                    <mat-error *ngIf="registerForm?.get('lastName')?.hasError('required')">{{errorMessage?.FIELD_REQUIRED}}</mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="3%">
+                <div fxFlex="50%" fxLayout="column">
+                  <mat-form-field fxFlex="80%" appearance="outline">
+                    <div fxLayout="row">
+                      <input matInput placeholder="Please enter email" class="custom-input" formControlName="email">
+                    </div>
+                    <mat-error *ngIf="registerForm?.get('email')?.hasError('required')">{{errorMessage?.FIELD_REQUIRED}}</mat-error>
+                    <mat-error *ngIf="registerForm?.get('email')?.hasError('pattern')">
+                    {{errorMessage?.EMAIL_INVALID}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div fxFlex="50%" fxLayout="column">
+                  <mat-form-field fxFlex="80%" appearance="outline">
+                    <div fxLayout="row">
+                      <input matInput placeholder="Please enter phone number" class="custom-input" formControlName="phoneNo">
+                    </div>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div fxFlex="100%" fxLayout="column">
+                <mat-form-field appearance="outline">
+                  <textarea matInput placeholder="Please enter querys" class="text-area-input" formControlName="query"></textarea>
+                  <mat-error *ngIf="registerForm?.get('query')?.hasError('required')">{{errorMessage?.FIELD_REQUIRED}}</mat-error>
+                  <mat-error *ngIf="registerForm?.get('query')?.hasError('maxlength')">{{errorMessage?.CHARACTER_MAX_LENGHT}}</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="form-btn" fxFlex="100%">
+                <button mat-raised-button (click)="onSubmit()">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <div *ngFor="let icons of iconDetails" class="social-media-icons">
+            <a [href]="icons?.link" target="_blank">
+               <img [src]="icons?.name" alt="image">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

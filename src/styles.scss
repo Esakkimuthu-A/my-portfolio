@@ -1,1 +1,70 @@
+
 /* You can add global styles to this file, and also import other style files */
+// CSS Reset, comment out if not required or using a different module
+@use 'themes' as theme;
+@use '@angular/material' as mat;
+@include mat.core();
+
+$my-palette: mat.define-palette(theme.$md-primary);
+
+// Define a dark theme
+$dark-theme: mat.define-dark-theme((color: (primary: mat.define-palette(theme.$md-primary),
+        accent: mat.define-palette(theme.$md-accent),
+      ),
+      // Only include `typography` and `density` in the default dark theme.
+      typography: mat.define-typography-config(),
+      density: 0,
+    ));
+
+// Define a light theme
+$light-theme: mat.define-light-theme((color: (primary: mat.define-palette(theme.$md-primary),
+        accent: mat.define-palette(theme.$md-accent),
+      ),
+      typography: mat.define-typography-config(),
+      density: 0,
+    ));
+
+// Apply the light theme by default
+.light-theme {
+  // @include mat.all-component-themes($light-theme);
+  // input {
+  //   caret-color: rgb(65, 65, 65) !important;
+  // }
+  // textarea {
+  //   caret-color: rgb(65, 65, 65) !important;
+  // }
+  --background-color: #f1f1f1;
+  // --background-color: #cfcfcf;
+  --text-color: black;
+  --main-color: #fe4600;
+}
+
+.dark-theme {
+  // @include mat.all-component-themes($dark-theme);
+  --background-color: #1f1f21;
+  --text-color:#fff;
+  --main-color:#ffae00;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root{
+  // --background-color: #1f1f21;
+  // --text-color:#fff;
+  // --main-color:#ffae00;
+  --text-font-family:'Times New Roman', Times, serif;
+}
+
+.snackbar-success .mdc-snackbar__surface {
+  background-color: rgb(22, 150, 22) !important;
+}
+.snackbar-error .mdc-snackbar__surface {
+  background-color: rgb(206, 30, 30) !important;
+}
+.snackbar-warning .mdc-snackbar__surface {
+  background-color: rgb(179, 179, 48) !important;
+}
+
+
