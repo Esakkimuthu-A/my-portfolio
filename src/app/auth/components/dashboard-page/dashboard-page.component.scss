@@ -22,7 +22,7 @@
 
 .container{
   background-color: var(--background-color);
-  height: 86vh;
+  min-height: calc(100vh - 90px);
 }
 
 .dashboard-content h2{
@@ -65,7 +65,7 @@
   color: var(--main-color);
 }
 
-.dashboard-content p{
+.skills-content{
   color: var(--text-color);
   font-family: var(--text-font-family);
   font-size: 18px;
@@ -174,25 +174,6 @@
   top: -85px;
 }
 
-@media screen and (max-width: 550px){
-  
-  .dashboard-content{
-    text-align: center;
-  }
-
-  .dashboard-btn{
-    justify-content: center;
-  }
-
-  .image-content{
-    animation: none;
-  }
-  .image-content img{
-    top: -50px;
-  }
-
-}
-
 @keyframes moving{
   0%{
     transform: translateY(0px);
@@ -215,19 +196,52 @@
     left: 0%;
   }
 }
+
+@media screen and (max-width: 550px){
+
+  .container{
+    padding-bottom: 20px;
+  }
+
+  .image-content{
+    animation: none;
+  }
+
+  .image-content img{
+    top: -50px;
+  }
+
+  .dashboard-content h1,
+  .dashboard-content h2{
+    font-size: 22px;
+  }
+
+  .image-content{
+    height: 300px;
+    width: 300px;
+  }
+
+  .image-content img{
+    min-width: 375px;
+    position: static;
+  }
+
+  .skills-content{
+    font-size: 15px;
+  }
+}
+
 @media screen and (max-width: 380px) {
   .small-screen-image{
     padding-top: 30px;
   }
 
   .image-content{
-    height: 230px;
-    width: 230px;
+    height: 250px;
+    width: 250px;
   }
 
   .image-content img{
-    width: 350px;
-    top: -10px;
+    min-width: 300px;
   }
-
 }

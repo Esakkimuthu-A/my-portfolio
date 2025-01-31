@@ -1,14 +1,14 @@
 <div fxLayoutAlign="center center" class="container" [ngClass]="{'light-theme':!commonService.isDarkTheme}">
   <div fxFlex="80%" fxFlex.xs="90%">
     <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.xs="10%">
-      <div fxFlex="60%" fxLayout="column" fxLayoutGap="2%" fxFlexOrder.lt-md="2" class="dashboard-content">
+      <div fxFlex="60%" fxLayout="column" fxLayoutGap="2%" fxLayoutGap.xs="0%" fxFlexOrder.lt-md="2" class="dashboard-content">
         <h2>Hii</h2>
         <h1>I'm <span class="author-name">Esakki Muthu</span></h1>
         <div fxLayout="row" class="dashboard-animate">
           <h1>a</h1>&nbsp;&nbsp;
           <h1 class="animate-text">Full Stack Developer</h1>
         </div>
-        <p>I am a Full Stack Developer with 2 years of experience in building dynamic, high-performance web applications. Skilled in [Angular, Cypress, TypeScript, Mysql, and more], I’m driven by a passion for creating impactful digital experiences.</p>
+        <p class="skills-content">I am a Full Stack Developer with 2 years of experience in building dynamic, high-performance web applications. Skilled in [Angular, Cypress, TypeScript, Mysql, and more], I’m driven by a passion for creating impactful digital experiences.</p>
         <div fxLayout="row" fxLayoutGap="4%" class="dashboard-btn">
           <button class="download-cv" (click)="downloadCV()">Download CV</button>
           <button routerLink="/app/aboutus" class="explore-more">Explore More</button>
