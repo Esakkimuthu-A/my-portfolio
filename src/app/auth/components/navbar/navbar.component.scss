@@ -98,22 +98,6 @@
   left: 0;
 }
 
-@media screen and (max-width: 599px) {
-  .container {
-    height: 120px;
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 // dark and light
 
 .themeToggle {
@@ -210,8 +194,8 @@ input[type=checkbox]{
 .small-screen-toggle {
   cursor: pointer;
   text-indent: -9999px;
-  width: 70px;
-  height: 30px;
+  width: 60px;
+  height: 25px;
   background: #c7c7c7;
   display: block;
   border-radius: 100px;
@@ -223,8 +207,8 @@ input[type=checkbox]{
   position: absolute;
   top: 5px;
   left: 5px;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   background: #fff;
   border-radius: 90px;
   transition: 0.3s;
@@ -240,5 +224,45 @@ input:checked + .small-screen-toggle:after {
 }
 
 .small-screen-toggle:active:after {
-  width: 70px;
+  width: 60px;
+}
+
+@media screen and (max-width: 959px){
+  .heading h1{
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .menu-open{
+    font-size: 20px !important;
+  }
+
+  .container {
+    height: 80px;
+  }
+
+  .heading h1{
+    font-size: 25px;
+  }
+
+  .menu-close{
+    font-size: 19px;
+    padding: 5px;
+  }
+
+  .navbar ul li {
+    margin: 10px 0px;
+    font-size: 16px;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

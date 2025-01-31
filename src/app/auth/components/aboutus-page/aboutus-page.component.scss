@@ -32,7 +32,6 @@
   height: 400px;
   width: 325px;
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px !important;
 }
 
 .aboutus-banner-image img:hover{
@@ -149,18 +148,6 @@
   opacity: 1;
 }
 
-@media screen and (max-width: 959px){
-  .aboutus-banner span{
-    text-align: center;
-  } 
-  .aboutus-banner{
-    margin: 25px;
-  }
-  .talk-btn{
-    text-align: center;
-  }
-}
-
 @keyframes contentAnimation {
   0% {
     opacity: 0;
@@ -175,4 +162,41 @@
 @keyframes spin3D {
   from { transform: rotateY(0deg) }
   to { transform: rotateY(360deg) }
+}
+
+@media screen and (max-width: 959px){
+  .aboutus-banner span{
+    text-align: center;
+  } 
+  .aboutus-banner{
+    margin: 25px;
+  }
+  .talk-btn{
+    text-align: center;
+  }
+  .about-me-description{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .experience-content h2{
+    font-size: 19px;
+  }
+  .experience-content p{
+    font-size: 14px;
+  }
+  .education-content h2{
+    font-size: 19px;
+  }
+  .education-content p{
+    font-size: 14px;
+  }
+  .about-me-description{
+    font-size: 16px;
+  }
+  .aboutus-banner-image img{
+    height: 325px;
+    width: 275px;
+  }
 }

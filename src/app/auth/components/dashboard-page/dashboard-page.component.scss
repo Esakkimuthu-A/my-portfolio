@@ -183,10 +183,14 @@
   .dashboard-btn{
     justify-content: center;
   }
-  
-  .image-content img{
-    width: 400px;
+
+  .image-content{
+    animation: none;
   }
+  .image-content img{
+    top: -50px;
+  }
+
 }
 
 @keyframes moving{
@@ -210,4 +214,20 @@
   100%{
     left: 0%;
   }
+}
+@media screen and (max-width: 380px) {
+  .small-screen-image{
+    padding-top: 30px;
+  }
+
+  .image-content{
+    height: 230px;
+    width: 230px;
+  }
+
+  .image-content img{
+    width: 350px;
+    top: -10px;
+  }
+
 }
