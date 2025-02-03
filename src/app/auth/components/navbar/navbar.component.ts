@@ -1,8 +1,9 @@
 import { Component, Renderer2 } from '@angular/core';
 import { PageNavigation } from '../../constants/portfolio.constant';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { CommonService } from 'src/app/shared/services/common.service';
 import { FormControl } from '@angular/forms';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -10,8 +11,8 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  
-  constructor(private router: Router,private commonService:CommonService,private renderer:Renderer2){}
+
+  constructor(private router: Router, private commonService: CommonService, private renderer: Renderer2) { }
 
   mapping: { [key: string]: number } = {
     dashboard: 0,
@@ -19,36 +20,44 @@ export class NavbarComponent {
     contactus: 2,
   };
   navigationDetails = PageNavigation;
-  hoverIndex=0;
-  fullUrl: any;
+  hoverIndex = 0;
+  fullUrl !: string[];
   theme !: FormControl;
 
-  ngOnInit(){
+  ngOnInit() {
     this.getParamValue();
-    this.theme=new FormControl(true)
+    this.getRouteValue();
+    this.theme = new FormControl(true)
     this.theme.patchValue(this.commonService.getTheme() == 'dark');
     this.checkTheme();
   }
 
-  getParamValue(){
-    const currentUrl=this.router.url;
-    this.fullUrl = currentUrl.split('/').filter(part => part);
-    this.hoverIndex=this.mapping[this.fullUrl[1]];
+  getRouteValue() {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.getParamValue();
+    });
   }
 
-  onNavigate(index : number){
-    this.hoverIndex=index;
+  getParamValue() {
+    const currentUrl = this.router.url;
+    this.fullUrl = currentUrl.split('/').filter(part => part);
+    this.hoverIndex = this.mapping[this.fullUrl[1]];
+  }
+
+  onNavigate() {
     this.getParamValue();
   }
 
-  closeMenu(){
-    var sideMenu=document.getElementById('sideMenu');
-    var dropMenu=document.getElementById('dropMenu');
-    if(sideMenu){
-      sideMenu.style.right="-300px";    
+  closeMenu() {
+    var sideMenu = document.getElementById('sideMenu');
+    var dropMenu = document.getElementById('dropMenu');
+    if (sideMenu) {
+      sideMenu.style.right = "-300px";
     }
-    if(dropMenu){
-      dropMenu.style.width="0vw"
+    if (dropMenu) {
+      dropMenu.style.width = "0vw"
     }
   }
 
@@ -63,18 +72,18 @@ export class NavbarComponent {
     this.commonService.setTheme(this.theme?.value);
   }
 
-  changeTheme(){
+  changeTheme() {
     this.checkTheme();
   }
-  
-  openMenu(){
-    var sideMenu=document.getElementById('sideMenu');
-    var dropMenu=document.getElementById('dropMenu');
-    if(sideMenu){
-      sideMenu.style.right="0px"; 
+
+  openMenu() {
+    var sideMenu = document.getElementById('sideMenu');
+    var dropMenu = document.getElementById('dropMenu');
+    if (sideMenu) {
+      sideMenu.style.right = "0px";
     }
-    if(dropMenu){
-      dropMenu.style.width="100vw"
+    if (dropMenu) {
+      dropMenu.style.width = "100vw"
     }
   }
 }

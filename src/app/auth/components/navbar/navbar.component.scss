@@ -44,9 +44,18 @@
   cursor: pointer;
 }
 
-.selected-button-color {
+.selected-route-color {
   color: var(--main-color) !important;
   border-bottom: 3px solid var(--main-color);
+}
+
+.selected-menu-route-color{
+  color: #1f1f21 !important;
+  background-color: #f3f3f3;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 0px 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .navbar ul {
@@ -248,8 +257,12 @@ input:checked + .small-screen-toggle:after {
   }
 
   .navbar ul li {
-    margin: 10px 0px;
+    margin: 10px;
     font-size: 16px;
+  }
+  
+  .small-screen-toggle{
+    margin: 0px 10px;
   }
 }
 

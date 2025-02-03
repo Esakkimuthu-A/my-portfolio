@@ -6,8 +6,8 @@
           <h1><span>P</span>ortfolio</h1>
         </div>
         <div fxLayout="row" fxHide.xs style="align-items: center;">
-          <div *ngFor="let item of navigationDetails;let i=index;" class="navigate-content" (click)="onNavigate(i)">
-            <a [ngClass]="{'selected-button-color' : i == hoverIndex}" routerLink="{{item?.navigate}}">{{item?.name}}</a>
+          <div *ngFor="let item of navigationDetails;let i=index;" class="navigate-content" (click)="onNavigate()">
+            <a [ngClass]="{'selected-route-color' : i == hoverIndex}" routerLink="{{item?.navigate}}">{{item?.name}}</a>
           </div>
           <label for="themeToggle" class="themeToggle st-sunMoonThemeToggleBtn" type="checkbox">
             <input type="checkbox" id="themeToggle" class="themeToggleInput" [formControl]="theme" (change)="checkTheme()"/>
@@ -31,9 +31,9 @@
         <div fxHide fxShow.xs>
           <div class="navbar">
             <ul id="sideMenu">
-              <li (click)="closeMenu()" routerLink="/app/dashboard">Home</li>
-              <li (click)="closeMenu()" routerLink="/app/aboutus">Aboutus</li>
-              <li (click)="closeMenu()" routerLink="/app/contactus">ContactUs</li>
+              <li (click)="closeMenu()" routerLink="/app/dashboard" [ngClass]="{'selected-menu-route-color' : 0 == hoverIndex}">Home</li>
+              <li (click)="closeMenu()" routerLink="/app/aboutus" [ngClass]="{'selected-menu-route-color' : 1 == hoverIndex}">Aboutus</li>
+              <li (click)="closeMenu()" routerLink="/app/contactus" [ngClass]="{'selected-menu-route-color' : 2 == hoverIndex}">ContactUs</li>
               <input type="checkbox" id="switch" [formControl]="theme" (change)="checkTheme()"/>
               <label for="switch" class="small-screen-toggle">Toggle</label>
               <mat-icon (click)="closeMenu()" class="menu-close">close</mat-icon>
