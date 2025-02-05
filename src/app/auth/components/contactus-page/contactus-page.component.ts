@@ -4,6 +4,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SnackBarService, SnackType } from 'src/app/shared/services/snack-bar.service';
 import { HttpRoutingService } from 'src/app/shared/services/http-routing.service';
 import { CommonService } from 'src/app/shared/services/common.service';
+import { catchError, EMPTY } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
+import { GetErrorMessageModel } from '../../models/portfolio.model';
 
 @Component({
   selector: 'app-contactus-page',
@@ -24,8 +27,15 @@ export class ContactusPageComponent {
   }
 
   getErrorMessages(){
-    this.HttpService.getErrorMessages().subscribe(res =>{
-      this.errorMessage =res;
+    this.HttpService.getErrorMessages().pipe(
+      catchError((error:HttpErrorResponse)=>{
+        this.SnackBar.openSnackBar({message:this.errorMessage?.FAILED_ERROR_MEESAGE,main: SnackType.Error});
+        return EMPTY;
+      })
+    ).subscribe((res:GetErrorMessageModel) => {
+      if(res){
+        this.errorMessage = res;
+      }
     });
   }
   
@@ -43,7 +53,7 @@ export class ContactusPageComponent {
     if(this.registerForm.valid){
       const {data,error} = await this.commonService.contactForm(this.registerForm.value);
       if(!error){
-        this.SnackBar.openSnackBar({message:'Your form was submitted successfully! Thank you!',main: SnackType.Success});
+        this.SnackBar.openSnackBar({message:this.errorMessage?.FORM_SUBMIT_SUCCESS,main: SnackType.Success});
         this.registerForm.reset();
         const emailData ={firstname: data[0]?.firstName,lastname: data[0]?.lastName,email: data[0]?.email,subject: data[0]?.query,mobilenumber: data[0]?.phoneNo};
         if(emailData){
@@ -57,10 +67,10 @@ export class ContactusPageComponent {
         }
       }
       else{
-        this.SnackBar.openSnackBar({message:'Try again later',main: SnackType.Error});
+        this.SnackBar.openSnackBar({message:this.errorMessage?.TRY_AGAIN,main: SnackType.Error});
       }
     }else{
-      this.SnackBar.openSnackBar({message:'Please fill out the mandatory fields',main: SnackType.Warning});
+      this.SnackBar.openSnackBar({message:this.errorMessage?.FILL_MANDATORY_FIELDS,main: SnackType.Warning});
     }
   }
   

@@ -1,5 +1,9 @@
 {
   "FIELD_REQUIRED":"This field is required",
   "CHARACTER_MAX_LENGHT":"Characters maximum lenght 200!",
-  "EMAIL_INVALID":"This email not valid!!!"
+  "EMAIL_INVALID":"This email not valid!!!",
+  "FILL_MANDATORY_FIELDS":"Please fill out the mandatory fields",
+  "FAILED_ERROR_MEESAGE":"Failed to get error messages. Please try again later.",
+  "FORM_SUBMIT_SUCCESS":"Your form was submitted successfully! Thank you!",
+  "TRY_AGAIN":"Try again later"
 }
