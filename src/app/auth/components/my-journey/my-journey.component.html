@@ -1,0 +1,31 @@
+<div fxLayoutAlign="center center">
+  <div fxFlex="90%">
+    <div fxLayoutAlign="center center"  class="journy-heading">
+      <h1 data-animation-time="500" data-animation='in' data-animation-name="slideITopFade">My <span>Journey</span></h1>
+    </div>
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="2%" fxLayoutGap.lt-md="5%">
+      <div fxFlex="50%" class="education-content">
+        <h3>Education</h3>
+        <div *ngFor="let item of educationDetails" class="card" data-animation='in' data-animation-name="slideInRightFade">
+          <div fxLayout="row" fxLayoutGap="10px" style="align-items: baseline;">
+            <span class="content-box"></span>
+            <span class="card-year">{{item?.year}}</span>
+          </div>
+          <h2 class="card-content">{{item?.content}}</h2>
+          <span class="card-aboutus">{{item?.aboutUs}}</span>
+        </div>
+      </div>
+      <div fxFlex="50%" class="experience-content">
+        <h3>Experience</h3>
+        <div *ngFor="let item of experienceDetails" class="card" data-animation='in' data-animation-name="slideInLeftFade">
+          <div fxLayout="row" fxLayoutGap="10px" style="align-items: baseline;">
+            <span class="content-box"></span>
+            <span class="card-year">{{item?.year}}</span>
+          </div>
+          <h2 class="card-content">{{item?.content}}</h2>
+          <span class="card-aboutus">{{item?.aboutUs}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

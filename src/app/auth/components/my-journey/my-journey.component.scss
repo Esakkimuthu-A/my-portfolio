@@ -1,0 +1,53 @@
+.journy-heading h1{
+  color: var(--text-color);
+  font-size: 33px;
+  font-family: var(--text-font-family);
+  font-weight: 600;
+}
+
+.journy-heading span{
+  color: var(--main-color);
+}
+
+.education-content h3,
+.experience-content h3{
+  color: var(--text-color);
+  font-size: 22px;
+  font-weight: 600;
+  font-family: var(--text-font-family);
+}
+
+.card{
+  // height: 150px;
+  max-width: 500px;
+  border: 3px solid var(--main-color);
+  margin: 10px 0px;
+  padding: 30px 10px;
+  border-radius: 5px;
+}
+
+.content-box{
+  height: 12px;
+  width: 12px;
+  border-radius: 2px;
+  background-color: var(--main-color);
+}
+
+.card-year{
+  color: var(--main-color);
+}
+
+.card-content{
+  color: var(--text-color);
+  font-size: 20px;
+  font-family: var(--text-font-family);
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.card-aboutus{
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 0.6cm;
+  font-family: var(--text-font-family);
+}

@@ -5,6 +5,7 @@ import { DashboardPageComponent } from './components/dashboard-page/dashboard-pa
 import { AboutusPageComponent } from './components/aboutus-page/aboutus-page.component';
 import { ContactusPageComponent } from './components/contactus-page/contactus-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MyJourneyComponent } from './components/my-journey/my-journey.component';
 
 
 
@@ -13,7 +14,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     DashboardPageComponent,
     AboutusPageComponent,
     ContactusPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    MyJourneyComponent
   ],
   imports: [
     CommonModule,
