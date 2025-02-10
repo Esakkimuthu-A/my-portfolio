@@ -12,7 +12,7 @@ export const socialMediaIcons=[
 ]
 
 export const educationContent=[
-  {year:"2009 - 2019",content:"Government Higher Secondary School",aboutUs:"where I developed a strong foundation in problem-solving and technology. My curiosity and passion for coding led me to explore web development, and now I’m focused on building innovative digital products"},
+  {year:"2007 - 2019",content:"Government Higher Secondary School",aboutUs:"where I developed a strong foundation in problem-solving and technology. My curiosity and passion for coding led me to explore web development, and now I’m focused on building innovative digital products"},
   {year:"2019 - 2023",content:"DR.Sivanthi Aditanar College Of Engineering",aboutUs:"I pursued my B.E. in Computer Science and Engineering at Dr. Sivanthi Aditanar College of Engineering, where I honed my technical skills and deepened my understanding of software development. College life was a transformative journey filled with hands-on projects, problem-solving, and collaboration with like-minded peers. It fueled my passion for coding and innovation, shaping me into the developer I am today"}
 ];
 

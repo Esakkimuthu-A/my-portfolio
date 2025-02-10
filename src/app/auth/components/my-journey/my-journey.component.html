@@ -1,29 +1,44 @@
-<div fxLayoutAlign="center center">
+<div fxLayoutAlign="center center" style="overflow: hidden;">
   <div fxFlex="90%">
     <div fxLayoutAlign="center center"  class="journy-heading">
       <h1 data-animation-time="500" data-animation='in' data-animation-name="slideITopFade">My <span>Journey</span></h1>
     </div>
     <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="2%" fxLayoutGap.lt-md="5%">
-      <div fxFlex="50%" class="education-content">
+      <div fxFlex="50%" class="education-content" data-animation='in' data-animation-name="slideInRightFade">
         <h3>Education</h3>
-        <div *ngFor="let item of educationDetails" class="card" data-animation='in' data-animation-name="slideInRightFade">
-          <div fxLayout="row" fxLayoutGap="10px" style="align-items: baseline;">
-            <span class="content-box"></span>
-            <span class="card-year">{{item?.year}}</span>
+        <div *ngFor="let item of educationDetails" fxLayout="row">
+          <div class="side-line" fxLayoutAlign="center center">
+            <div class="side-line-circle">
+              <div class="connection-line"></div>
+            </div>
           </div>
-          <h2 class="card-content">{{item?.content}}</h2>
-          <span class="card-aboutus">{{item?.aboutUs}}</span>
+          <div class="card">
+            <div fxLayout="row" fxLayoutGap="10px" style="align-items: baseline;">
+              <span class="content-box"></span>
+              <span class="card-year">{{item?.year}}</span>
+            </div>
+            <h2 class="card-content">{{item?.content}}</h2>
+            <span class="card-aboutus">{{item?.aboutUs}}</span>
+          </div>
+        
         </div>
       </div>
-      <div fxFlex="50%" class="experience-content">
+      <div fxFlex="50%" class="experience-content" data-animation='in' data-animation-name="slideInLeftFade">
         <h3>Experience</h3>
-        <div *ngFor="let item of experienceDetails" class="card" data-animation='in' data-animation-name="slideInLeftFade">
-          <div fxLayout="row" fxLayoutGap="10px" style="align-items: baseline;">
-            <span class="content-box"></span>
-            <span class="card-year">{{item?.year}}</span>
+        <div *ngFor="let item of experienceDetails" fxLayout="row">
+          <div class="side-line" fxLayoutAlign="center center">
+            <div class="side-line-circle">
+              <div class="connection-line"></div>
+            </div>
           </div>
-          <h2 class="card-content">{{item?.content}}</h2>
-          <span class="card-aboutus">{{item?.aboutUs}}</span>
+          <div class="card">
+            <div fxLayout="row" fxLayoutGap="10px" style="align-items: baseline;">
+              <span class="content-box"></span>
+              <span class="card-year">{{item?.year}}</span>
+            </div>
+            <h2 class="card-content">{{item?.content}}</h2>
+            <span class="card-aboutus">{{item?.aboutUs}}</span>
+          </div>
         </div>
       </div>
     </div>
