@@ -60,6 +60,9 @@
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center">
+          <div class="social-media-icons" (click)="openWhatsApp()">
+            <img src="/assets/whatsapp.png" alt="image">
+          </div>
           <div *ngFor="let icons of iconDetails" class="social-media-icons">
             <a [href]="icons?.link" target="_blank">
                <img [src]="icons?.name" alt="image">

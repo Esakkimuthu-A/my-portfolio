@@ -5,13 +5,14 @@ import { AboutusPageComponent } from './auth/components/aboutus-page/aboutus-pag
 import { ContactusPageComponent } from './auth/components/contactus-page/contactus-page.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { NavbarComponent } from './auth/components/navbar/navbar.component';
+import { UnsavedChangesGuard } from './shared/services/unsaved-changes.guard';
 
 const routes: Routes = [
   {path:'',redirectTo:'/app/dashboard',pathMatch:'full'},
   {path:'app',component:NavbarComponent,children:[
     {path:'dashboard',component:DashboardPageComponent},
     {path:'aboutus',component:AboutusPageComponent},
-    {path:'contactus',component:ContactusPageComponent}
+    {path:'contactus',component:ContactusPageComponent, canDeactivate: [UnsavedChangesGuard]}
   ]},
   {path:'**',component:PageNotFoundComponent},
 ];

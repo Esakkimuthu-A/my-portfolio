@@ -108,6 +108,10 @@ textarea::placeholder {
   margin: 0px 10px;
 }
 
+.social-media-icons img:hover{
+  cursor: pointer;
+}
+
 @media screen and (max-width: 959px){
   .form-container{
     margin-top: 100%;

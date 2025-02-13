@@ -1,0 +1,12 @@
+.dialog-heading{
+  font-size: 22px;
+}
+
+.dialog-content p{
+  font-size: 16px;
+}
+
+::ng-deep .mat-mdc-dialog-container{
+  height: 225px !important;
+  width: 400px !important;
+}

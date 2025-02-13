@@ -16,6 +16,7 @@ import { GetErrorMessageModel } from '../../models/portfolio.model';
 export class ContactusPageComponent {
   iconDetails = socialMediaIcons;
   registerForm !: FormGroup;
+  phoneNumber = '7339679918';
   errorMessage !: any;
 
   constructor(private SnackBar : SnackBarService,public commonService: CommonService,private HttpService : HttpRoutingService){
@@ -72,6 +73,16 @@ export class ContactusPageComponent {
     }else{
       this.SnackBar.openSnackBar({message:this.errorMessage?.FILL_MANDATORY_FIELDS,main: SnackType.Warning});
     }
+  }
+
+  canDeactivate(): boolean {
+    return this.registerForm ? !this.registerForm.dirty : true;
+  }
+
+  openWhatsApp(): void {
+    const message = encodeURIComponent('Hello! I need some assistance.');
+    const whatsappUrl = `https://wa.me/${this.phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
   }
   
 }
