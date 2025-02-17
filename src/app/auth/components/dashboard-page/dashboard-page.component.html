@@ -1,14 +1,24 @@
 <div fxLayoutAlign="center center" class="container" [ngClass]="{'light-theme':!commonService.isDarkTheme}">
   <div fxFlex="80%" fxFlex.xs="90%">
     <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.xs="10%">
-      <div fxFlex="60%" fxLayout="column" fxLayoutGap="2%" fxLayoutGap.xs="0%" fxFlexOrder.lt-md="2" class="dashboard-content">
+      <div fxFlex="60%" fxLayout="column" fxLayoutGap="2%" fxLayoutGap.xs="5px" fxFlexOrder.lt-md="2"
+        class="dashboard-content">
         <h2>Hii</h2>
         <h1>I'm <span class="author-name">Esakki Muthu</span></h1>
         <div fxLayout="row" class="dashboard-animate">
           <h1>a</h1>&nbsp;&nbsp;
           <h1 class="animate-text">Full Stack Developer</h1>
         </div>
-        <p class="skills-content">I am a Full Stack Developer with 2 years of experience in building dynamic, high-performance web applications. Skilled in [Angular, Cypress, TypeScript, Mysql, and more], I’m driven by a passion for creating impactful digital experiences.</p>
+        <p class="skills-content">I am a Full Stack Developer with 2 years of experience in building dynamic,
+          high-performance web applications. Skilled in [Angular, Cypress, TypeScript, Mysql, and more], I’m driven by a
+          passion for creating impactful digital experiences.</p>
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" fxLayoutGap.xs="6px"
+          class="contact-address-container">
+          <div *ngFor="let value of contactDetails" fxLayout="row" class="contact-address" fxLayoutGap="5px">
+            <mat-icon class="contact-icon">{{value?.iconName}}</mat-icon>
+            <p>{{value?.address}}</p>
+          </div>
+        </div>
         <div fxLayout="row" fxLayoutGap="4%" class="dashboard-btn">
           <button class="download-cv" (click)="downloadCV()">Download CV</button>
           <button routerLink="/app/aboutus" class="explore-more">Explore More</button>
@@ -22,3 +32,32 @@
     </div>
   </div>
 </div>
+
+<button class="chatbox-open">
+  <mat-icon>message</mat-icon>
+</button>
+<button class="chatbox-close">
+  <mat-icon>close</mat-icon>
+</button>
+<section class="chatbox-popup">
+  <header class="chatbox-popup__header">
+    <div class="message-heading">
+      <h1>Hello !!!</h1>
+    </div>
+    <aside style="flex:1">
+      <button class="chatbox-maximize"><i class="fa fa-window-maximize" aria-hidden="true"></i></button>
+    </aside>
+  </header>
+  <main class="chatbox-popup__main">
+    "We make it simple and seamless for clients and collaborators to connect with me. Have a question about my work?
+    Ask me anything!"
+  </main>
+  <footer class="chatbox-popup__footer">
+    <!-- <aside style="flex:10"> -->
+    <textarea type="text" placeholder="Type your message here..." autofocus></textarea>
+    <!-- </aside> -->
+    <button style="color:#888;text-align:center;">
+      <mat-icon (click)="sendMessage()">send</mat-icon>
+    </button>
+  </footer>
+</section>

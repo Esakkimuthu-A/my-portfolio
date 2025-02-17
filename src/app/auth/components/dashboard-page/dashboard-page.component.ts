@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonService } from 'src/app/shared/services/common.service';
-
+import * as $ from 'jquery';
+import { contactAddress } from '../../constants/portfolio.constant';
 @Component({
   selector: 'app-dashboard-page',
   templateUrl: './dashboard-page.component.html',
@@ -9,6 +10,8 @@ import { CommonService } from 'src/app/shared/services/common.service';
 })
 export class DashboardPageComponent {
 
+  contactDetails = contactAddress;
+  
   constructor(public commonService: CommonService){}
   
   ngOnInit(){
@@ -34,6 +37,38 @@ export class DashboardPageComponent {
     }
   }
 
+  ngAfterViewInit(): void {
+    const chatbox = $.noConflict();
+
+    chatbox(() => {
+      chatbox('.chatbox-open').on('click', function () {
+        chatbox('.chatbox-popup, .chatbox-close').fadeIn();
+      });
+
+      chatbox('.chatbox-close').on('click', function () {
+        chatbox('.chatbox-popup, .chatbox-close').fadeOut();
+      });
+
+      chatbox('.chatbox-maximize').on('click', function () {
+        chatbox('.chatbox-popup, .chatbox-open, .chatbox-close').fadeOut();
+        chatbox('.chatbox-panel').fadeIn(function () {
+          chatbox(this).css({ display: 'flex' });
+        });
+      });
+
+      chatbox('.chatbox-minimize').on('click', function () {
+        chatbox('.chatbox-panel').fadeOut();
+        chatbox('.chatbox-popup, .chatbox-open, .chatbox-close').fadeIn();
+      });
+
+      chatbox('.chatbox-panel-close').on('click', function () {
+        chatbox('.chatbox-panel').fadeOut();
+        chatbox('.chatbox-open').fadeIn();
+      });
+    });
+  }
+
+
   downloadCV(){
     const resumeUrl='/assets/Document.pdf';
     const link=document.createElement('a');
@@ -41,6 +76,11 @@ export class DashboardPageComponent {
     link.download='My_Resume.pdf';
     link.click();
     link.remove();
+  }
+  
+
+  sendMessage(){
+    console.log("send message");
   }
 
 }

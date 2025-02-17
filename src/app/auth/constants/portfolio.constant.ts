@@ -20,3 +20,9 @@ export const experienceContent=[
   {year:"2023 (6 - Months)",content:"Centizen (Internship)",aboutUs:"I also completed a 6-month internship at Centizen, where I gained hands-on experience in Angular, TypeScript, and Node.js. This internship helped me refine my skills in full-stack development and deepened my understanding of building scalable web applications."},
   {year:"2023 - 2025",content:"Centizen.Incc",aboutUs:"I’m working at Centizen, where I focus on building scalable web applications using Angular, TypeScript, and Node.js. My role allows me to continuously explore new technologies and optimize performance for impactful digital solutions. Additionally, Im working on Zen-Studio, a platform designed to help users create their own websites effortlessly. I am always eager to learn, innovate, and take on new challenges in the ever-evolving tech landscape."}
 ];
+
+export const contactAddress=[
+  {iconName:"location_on",address:"Tenkasi"},
+  {iconName:"phone",address:"7339679918"},
+  {iconName:"email",address:"esakkimuthua2002@gmail.com"}
+]
