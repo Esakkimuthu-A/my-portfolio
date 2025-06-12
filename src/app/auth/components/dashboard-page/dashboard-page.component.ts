@@ -23,7 +23,7 @@ export class DashboardPageComponent {
     if(text){
       const textLoad = ()=>{
         setTimeout(() => {
-          text.textContent="Full Stack Developer"
+          text.textContent="Angular Developer"
         },0);
         setTimeout(() => {
           text.textContent="Web Designer"
@@ -70,10 +70,10 @@ export class DashboardPageComponent {
 
 
   downloadCV(){
-    const resumeUrl='/assets/Document.pdf';
+    const resumeUrl='/assets/ESAKKIMUTHU.pdf';
     const link=document.createElement('a');
     link.href=resumeUrl;
-    link.download='My_Resume.pdf';
+    link.download='Esakkimuthu_resume.pdf';
     link.click();
     link.remove();
   }
