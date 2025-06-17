@@ -111,7 +111,9 @@
   color: var(--text-color) !important;
   font-family: var(--text-font-family);
   font-size: 18px;
-  line-height: 1.3em;
+  line-height: 1.4em;
+  letter-spacing: 0.3px;
+  word-spacing: 0.5px;
 }
 
 .aboutus-btn{
@@ -280,7 +282,9 @@
   font-size: 0.95rem;
   color: #666;
   padding: 0 15px 15px;
-  line-height: 1.5;
+  line-height: 1.4em;
+  letter-spacing: 0.3px;
+  word-spacing: 0.5px;
   font-size: 18px;
   font-family: var(--text-font-family);
 }

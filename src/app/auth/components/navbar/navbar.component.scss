@@ -26,6 +26,10 @@
   animation: fadeInUp 3s ease forwards;
 }
 
+.heading h1:hover {
+  cursor: pointer;
+}
+
 .heading span {
   color: var(--main-color);
 }

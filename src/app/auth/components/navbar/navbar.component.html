@@ -3,7 +3,7 @@
     <div fxFlex="85%">
       <div fxLayout="row" class="navbar-content">
         <div class="heading">
-          <h1><span>P</span>ortfolio</h1>
+          <h1 (click)="toNavigate()"><span>P</span>ortfolio</h1>
         </div>
         <div fxLayout="row" fxHide.xs style="align-items: center;">
           <div *ngFor="let item of navigationDetails;let i=index;" class="navigate-content" (click)="onNavigate()">

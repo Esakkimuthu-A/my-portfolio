@@ -188,4 +188,8 @@ export class NavbarComponent {
       fill: "forwards"
     });
   };
+
+  toNavigate(){
+    this.router.navigate(['app/dashboard']);
+  }
 }
