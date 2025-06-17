@@ -65,12 +65,14 @@
   color: var(--main-color);
 }
 
-.skills-content{
+.skills-content {
   color: var(--text-color);
   font-family: var(--text-font-family);
-  font-size: 18px;
-  margin: 0px 0px 20px 0px !important;
-  line-height: 1.3em;
+  font-size: 19px;
+  margin: 7px 0 17px 0 !important;
+  line-height: 1.4em;
+  letter-spacing: 0.3px;
+  word-spacing: 0.5px;
 }
 
 .contact-address p{

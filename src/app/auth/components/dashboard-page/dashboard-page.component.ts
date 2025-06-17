@@ -23,13 +23,13 @@ export class DashboardPageComponent {
     if(text){
       const textLoad = ()=>{
         setTimeout(() => {
-          text.textContent="Angular Developer"
+          text.textContent="Full Stack Developer"
         },0);
         setTimeout(() => {
-          text.textContent="Web Designer"
+          text.textContent="Creative Web Designer"
         },4000);
         setTimeout(() => {
-          text.textContent="Youtuber"
+          text.textContent="UI/UX Enthusiast"
         },8000);
       }
       textLoad();
