@@ -17,6 +17,14 @@
   .education-content p {
     color: var(--background-color);
   }
+
+  .portfolio-header h2 {
+    color:  var(--main-color);
+  }
+
+  .project-card {
+    background-color: white;
+  }
 }
 
 .container{
@@ -178,6 +186,9 @@
   .about-me-description{
     text-align: center;
   }
+  .portfolio-header h2 {
+    text-align: center !important;
+  }
 }
 
 @media screen and (max-width: 599px) {
@@ -199,5 +210,113 @@
   .aboutus-banner-image img{
     height: 325px;
     width: 275px;
+  }
+}
+
+// new 
+.portfolio {
+  max-width: 1200px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.portfolio-header {
+  margin-bottom: 25px;
+}
+
+.portfolio-header h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin: 0px;
+  text-align: start;
+  font-family: var(--text-font-family);
+  font-weight: bold;
+}
+
+.projects-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+}
+
+.project-card {
+  background-color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  padding: 15px 15px 5px;
+  font-weight: bold;
+  font-family: var(--text-font-family);
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #666;
+  padding: 0 15px 15px;
+  line-height: 1.5;
+  font-size: 18px;
+  font-family: var(--text-font-family);
+}
+
+.view-project {
+  display: inline-block;
+  padding: 15px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.view-project:hover {
+  color: #0056b3;
+}
+
+/* Hide scrollbar for a cleaner look */
+.projects::-webkit-scrollbar {
+  display: none;
+}
+
+.projects {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%;
   }
 }
