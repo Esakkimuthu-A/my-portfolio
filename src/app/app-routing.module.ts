@@ -10,9 +10,9 @@ import { UnsavedChangesGuard } from './shared/services/unsaved-changes.guard';
 const routes: Routes = [
   {path:'',redirectTo:'/app/dashboard',pathMatch:'full'},
   {path:'app',component:NavbarComponent,children:[
-    {path:'dashboard',component:DashboardPageComponent},
-    {path:'aboutus',component:AboutusPageComponent},
-    {path:'contactus',component:ContactusPageComponent, canDeactivate: [UnsavedChangesGuard]}
+    {path:'dashboard',component:DashboardPageComponent,data: { title: 'Home - Portfolio' }},
+    {path:'aboutus',component:AboutusPageComponent, data: { title: 'About Us - Portfolio' }},
+    {path:'contactus',component:ContactusPageComponent,data: { title: 'Contact Us - Portfolio' }, canDeactivate: [UnsavedChangesGuard]}
   ]},
   {path:'**',component:PageNotFoundComponent},
 ];
