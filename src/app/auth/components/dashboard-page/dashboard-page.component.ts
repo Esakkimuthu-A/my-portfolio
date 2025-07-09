@@ -23,7 +23,7 @@ export class DashboardPageComponent {
     if(text){
       const textLoad = ()=>{
         setTimeout(() => {
-          text.textContent="Full Stack Developer"
+          text.textContent="Frontend Developer"
         },0);
         setTimeout(() => {
           text.textContent="Creative Web Designer"
